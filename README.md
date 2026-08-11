@@ -7,7 +7,7 @@ preserves the final accepted state:
 
 - smaller keys split into left and right clusters;
 - a real center gap created with flexbox auto margins;
-- 2 px horizontal and vertical spacing between painted key faces;
+- visually even horizontal and vertical spacing between painted key faces;
 - untouched nested button icons;
 - Steam's native vertical position and unobstructed bottom menu bar.
 

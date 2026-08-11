@@ -20,9 +20,9 @@ key in each right-hand cluster. In `shared.css`, adjust
 variables for Tab, Caps Lock, Shift, Enter, and Backspace. The remaining row
 width automatically becomes the center gap.
 
-Keys have 1 px padding on each edge, producing a measured 2 px gap between
-their painted faces horizontally and vertically. Desktop Mode retains Steam's
-native keyboard position so its bottom menu bar remains unobstructed.
+Keys use two-thirds px horizontal padding and 1 px vertical padding to produce
+visually even seams after Steam's 150% Desktop Mode zoom. Desktop Mode retains
+Steam's native keyboard position so its bottom menu bar remains unobstructed.
 
 Disable the theme to restore the stock layout. The theme itself does not
 replace Steam UI files; the local CSS Loader reliability patch may need to be

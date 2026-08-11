@@ -30,15 +30,16 @@
 }
 
 /*
- * Use equal 1 px padding on every side for consistent 2 px gaps between
- * neighboring painted keys in both directions.
+ * Steam's 150% standalone zoom makes equal CSS padding look wider across the
+ * columns. Two-thirds px horizontally and 1 px vertically produce visually
+ * even seams on the Deck display.
  * Content-box sizing keeps the 44 px painted key height from overlapping it.
  */
 [role="grid"][class*="Layout_"] > :is(.Row_0, .Row_1, .Row_2, .Row_3, .Row_4) > [role="gridcell"] > [data-key-row] {
   padding-top: 1px !important;
-  padding-right: 1px !important;
+  padding-right: 0.6667px !important;
   padding-bottom: 1px !important;
-  padding-left: 1px !important;
+  padding-left: 0.6667px !important;
 }
 
 /* Preserve the narrow grave/accent key on layouts that provide it. */
