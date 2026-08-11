@@ -1,8 +1,5 @@
 # AI Slop Split Thumb Keyboard
 
-An AI-slop split thumb keyboard for Steam Deck, assembled through an extended
-and occasionally cursed human/AI CSS debugging session.
-
 ![Split thumb keyboard running in Steam Deck Desktop Mode](assets/split-thumb-keyboard.png)
 
 This repository is the reproducible source for the locally installed theme. It
