@@ -1,0 +1,11 @@
+{
+  "name": "Split Thumb Keyboard",
+  "author": "Local",
+  "version": "v1.0.0",
+  "description": "Splits the Steam on-screen keyboard into left and right thumb clusters.",
+  "target": "Keyboard",
+  "manifest_version": 8,
+  "inject": {
+    "shared.css": [".*"]
+  }
+}

@@ -1,0 +1,82 @@
+/*
+ * Split Thumb Keyboard
+ *
+ * Rows 0-3 use fixed, smaller hit-area widths. The first key in the right
+ * cluster receives margin-left:auto, so all otherwise-unused width becomes
+ * one real center gap. No key is transformed, hidden, or overlaid.
+ */
+
+[role="grid"][class*="Layout_"] {
+  /* The standalone Deck keyboard is 853 CSS px wide at 150% display scale. */
+  /* Content widths plus 2 px padding preserve the measured outer widths. */
+  --split-thumb-key-width: 46px;
+  --split-thumb-half-key-width: 26px;
+  --split-thumb-tab-width: 50px;
+  --split-thumb-caps-width: 62px;
+  --split-thumb-shift-width: 80px;
+  --split-thumb-action-width: 76px;
+}
+
+/*
+ * Make only the direct key hitboxes smaller. Steam copies data-key attributes
+ * onto nested controller glyphs, so the structural path is intentionally
+ * strict to keep icons at their native size and position.
+ */
+[role="grid"][class*="Layout_"] > :is(.Row_0, .Row_1, .Row_2, .Row_3) > [role="gridcell"] > [data-key-row] {
+  box-sizing: content-box !important;
+  flex: 0 0 var(--split-thumb-key-width) !important;
+  width: var(--split-thumb-key-width) !important;
+  min-width: 0 !important;
+}
+
+/*
+ * Use equal 1 px padding on every side for consistent 2 px gaps between
+ * neighboring painted keys in both directions.
+ * Content-box sizing keeps the 44 px painted key height from overlapping it.
+ */
+[role="grid"][class*="Layout_"] > :is(.Row_0, .Row_1, .Row_2, .Row_3, .Row_4) > [role="gridcell"] > [data-key-row] {
+  padding-top: 1px !important;
+  padding-right: 1px !important;
+  padding-bottom: 1px !important;
+  padding-left: 1px !important;
+}
+
+/* Preserve the narrow grave/accent key on layouts that provide it. */
+[role="grid"][class*="Layout_"] > .Row_0 > [role="gridcell"] > [data-key="`"] {
+  flex-basis: var(--split-thumb-half-key-width) !important;
+  width: var(--split-thumb-half-key-width) !important;
+}
+
+/* Preserve useful extra width for the non-letter keys. */
+[role="grid"][class*="Layout_"] > .Row_1 > [role="gridcell"] > [data-key="Tab"] {
+  flex-basis: var(--split-thumb-tab-width) !important;
+  width: var(--split-thumb-tab-width) !important;
+}
+
+[role="grid"][class*="Layout_"] > .Row_2 > [role="gridcell"] > [data-key="CapsLock"] {
+  flex-basis: var(--split-thumb-caps-width) !important;
+  width: var(--split-thumb-caps-width) !important;
+}
+
+[role="grid"][class*="Layout_"] > .Row_3 > [role="gridcell"] > [data-key="Shift"] {
+  flex-basis: var(--split-thumb-shift-width) !important;
+  width: var(--split-thumb-shift-width) !important;
+}
+
+[role="grid"][class*="Layout_"] > :is(.Row_0, .Row_1, .Row_2, .Row_3) > [role="gridcell"] > :is([data-key="Enter"], [data-key="Backspace"]) {
+  flex-basis: var(--split-thumb-action-width) !important;
+  width: var(--split-thumb-action-width) !important;
+}
+
+/*
+ * Anchor the right cluster. These data attributes are on the flex-item
+ * hitboxes; Steam's Col_* classes are only on their painted child elements.
+ */
+[role="grid"][class*="Layout_"] > .Row_0 > [role="gridcell"] > [data-key-row="0"][data-key-col="7"],
+[role="grid"][class*="Layout_"] > .Row_1 > [role="gridcell"] > [data-key-row="1"][data-key-col="6"],
+[role="grid"][class*="Layout_"] > .Row_2 > [role="gridcell"] > [data-key-row="2"][data-key-col="6"],
+[role="grid"][class*="Layout_"] > .Row_3 > [role="gridcell"] > [data-key-row="3"][data-key-col="6"] {
+  margin-left: auto !important;
+}
+
+/* Leave row 4 stock: its single spacebar cannot be split honestly in CSS. */
