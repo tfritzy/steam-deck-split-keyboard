@@ -1,7 +1,12 @@
-# Split Thumb Keyboard backup
+# AI Slop Split Thumb Keyboard
 
-This repository is the reproducible source for the locally installed Steam
-Deck split keyboard theme. It preserves the final accepted state:
+An AI-slop split thumb keyboard for Steam Deck, assembled through an extended
+and occasionally cursed human/AI CSS debugging session.
+
+![Split thumb keyboard running in Steam Deck Desktop Mode](assets/split-thumb-keyboard.png)
+
+This repository is the reproducible source for the locally installed theme. It
+preserves the final accepted state:
 
 - smaller keys split into left and right clusters;
 - a real center gap created with flexbox auto margins;
