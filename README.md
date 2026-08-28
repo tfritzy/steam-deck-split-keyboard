@@ -11,9 +11,6 @@ preserves the final accepted state:
 - untouched nested button icons;
 - Steam's native vertical position and unobstructed bottom menu bar.
 
-It also contains the tested CSS Loader 2.1.2 browser-hook snapshot that reduces
-delayed theme injection into newly opened keyboard windows.
-
 ## Reinstall
 
 Install Decky Loader and CSS Loader first, then run:
@@ -23,9 +20,8 @@ cd /home/deck/Split-Thumb-Keyboard
 ./install.sh
 ```
 
-The script installs and enables the theme. It installs the reliability snapshot
-only when the detected CSS Loader version is exactly 2.1.2; other versions are
-left alone. Use `./install.sh --theme-only` to skip that snapshot explicitly.
+The script installs and enables the CSS Loader theme without modifying Steam or
+CSS Loader code.
 
 In CSS Loader, keep **Standalone Backend** enabled for Desktop Mode. If Decky
 cannot be restarted automatically, restart Steam or Decky once after installing.
@@ -33,7 +29,6 @@ cannot be restarted automatically, restart Steam or Decky once after installing.
 ## Locations
 
 - `theme/` — complete CSS Loader theme and activation files.
-- `extras/css-loader-v2.1.2/` — the tested fast-injection browser hook.
 - `install.sh` — idempotent local installer.
 
 The installed working copy remains at

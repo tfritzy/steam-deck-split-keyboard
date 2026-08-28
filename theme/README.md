@@ -24,6 +24,5 @@ Keys use two-thirds px horizontal padding and 1 px vertical padding to produce
 visually even seams after Steam's 150% Desktop Mode zoom. Desktop Mode retains
 Steam's native keyboard position so its bottom menu bar remains unobstructed.
 
-Disable the theme to restore the stock layout. The theme itself does not
-replace Steam UI files; the local CSS Loader reliability patch may need to be
-reapplied if CSS Loader is updated.
+Disable the theme to restore the stock layout. The theme does not replace or
+modify Steam or CSS Loader code.
